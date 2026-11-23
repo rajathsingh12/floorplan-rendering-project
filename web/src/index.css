@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-travertine: #F5F1EB;
+  --color-sand: #EAE3D9;
+  --color-obsidian: #161614;
+  --color-obsidian-soft: #1E1D1A;
+  --color-espresso: #1F1D1A;
+  --color-stone: #6B655C;
+  --color-palm: #2F4838;
+  --color-brass: #B8935A;
+  --color-terracotta: #B5583B;
+  --color-lagoon: #2F6E73;
+}
+
+:root {
+  --bg-travertine: #F5F1EB;
+  --bg-sand: #EAE3D9;
+  --bg-obsidian: #161614;
+  --text-espresso: #1F1D1A;
+  --text-stone: #6B655C;
+  --accent-palm: #2F4838;
+  --accent-brass: #B8935A;
+  --accent-terracotta: #B5583B;
+  --accent-lagoon: #2F6E73;
+  --border-hairline: rgba(31, 29, 26, 0.12);
+  --border-hairline-dark: rgba(245, 241, 235, 0.14);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--bg-travertine);
+  color: var(--text-espresso);
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-travertine);
+}
+
+/* Architectural hairline utilities */
+.hairline-light {
+  border-color: var(--border-hairline);
+}
+
+.hairline-dark {
+  border-color: var(--border-hairline-dark);
+}
+
+/* Subtle architectural drafting grid for blueprint / phase-2 frames */
+.blueprint-grid {
+  background-image:
+    linear-gradient(to right, rgba(31, 29, 26, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(31, 29, 26, 0.055) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.blueprint-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(245, 241, 235, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(245, 241, 235, 0.055) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Editorial typography defaults */
+.font-editorial {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.font-spec {
+  font-family: var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Print / Investor PDF deck adjustments */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #F5F1EB !important;
+    color: #1F1D1A !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

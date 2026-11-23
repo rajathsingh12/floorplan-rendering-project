@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Dark-Mode Architectural Monograph Tokens (Volcanic Basalt, Teak & Brass)
+   ========================================================================== */
+@theme {
+  --color-obsidian: #0E0D0B;
+  --color-basalt: #151411;
+  --color-charcoal: #1D1B17;
+  --color-travertine: #F5F1EB;
+  --color-sand: #E6DFD3;
+  --color-espresso: #F5F1EB;
+  --color-stone: #9E9689;
+  --color-palm: #78A889;
+  --color-palm-deep: #2F4838;
+  --color-brass: #C8A264;
+  --color-terracotta: #C86849;
+  --color-lagoon: #3E8E94;
+
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --ease-arch: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  background: var(--color-obsidian);
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-travertine);
+  background: var(--color-obsidian);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-brass);
+  color: var(--color-obsidian);
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+/* ---------- Editorial utilities ---------- */
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+@utility display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.018em;
+  line-height: 0.96;
+}
+
+@utility hairline {
+  border-color: rgba(245, 241, 235, 0.12);
+}
+
+@utility hairline-light {
+  border-color: rgba(245, 241, 235, 0.14);
+}
+
+@utility blueprint-grid {
+  background-color: var(--color-basalt);
+  background-image:
+    linear-gradient(rgba(200, 162, 100, 0.11) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 162, 100, 0.11) 1px, transparent 1px),
+    linear-gradient(rgba(245, 241, 235, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 241, 235, 0.04) 1px, transparent 1px);
+  background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
+}
+
+/* ---------- Film grain (fixed, subtle on dark) ---------- */
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: -50%;
+  z-index: 90;
+  opacity: 0.032;
+  mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 0.96  0 0 0 0 0.9  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  animation: grain-shift 1.2s steps(6) infinite;
+}
+
+@keyframes grain-shift {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-3%, 2%); }
+  40% { transform: translate(2%, -3%); }
+  60% { transform: translate(-2%, -1%); }
+  80% { transform: translate(3%, 3%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ---------- Pins & orbits ---------- */
+@keyframes pin-pulse {
+  0% { transform: scale(0.6); opacity: 0.75; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+.pin-pulse::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: currentColor;
+  animation: pin-pulse 2.2s var(--ease-arch) infinite;
+}
+
+/* ---------- Native dialog ---------- */
+dialog::backdrop {
+  background: rgba(8, 8, 7, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ---------- Print / Deck PDF ---------- */
+@media print {
+  @page { size: A4 landscape; margin: 10mm; }
+  html, body { background: #0E0D0B !important; color: #F5F1EB !important; }
+  .grain, header, aside, dialog { display: none !important; }
+  [data-print-static] { height: auto !important; }
+  [data-print-static] > .sticky { position: relative !important; height: auto !important; }
+  section { break-inside: avoid-page; }
+}

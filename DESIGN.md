@@ -1,7 +1,10 @@
 # DESIGN.md — The Rooftop Sanctuary (20,000 Sq. Ft. Architectural Pitch Experience)
 
-> **Purpose of this Document:** This file serves as the single source of truth for AI design tools (Google Stitch) and coding agents (Claude Code, MiniMax-M3) to generate a high-craft, interactive, scroll-driven architectural presentation website.
+> **Purpose of this Document:** This file serves as the visual design foundation for the interactive, scroll-driven architectural presentation website.
 > **Business Objective:** Secure ₹5–6 Crore in investment by transforming an unmeasured, raw \~20,000 sq. ft. rooftop/top-floor office space into a unified, luxury **Bali-themed Lifestyle Hub** housing a **Gym, Salon, and Café** (with modular exploration of a **Pool & Perimeter Track**).
+>
+> **Canonical v2 Implementation Note (`website-v2/` — Dark Monograph Edition):**
+> The live application in `website-v2/` implements this specification locked to the **true 8-zone building silhouette** (see `AGENTS.md` and `CHECKPOINT_HANDOFF.md`) using a full **Dark Volcanic Obsidian & Brushed Brass Monograph theme** (`#0E0D0B` Obsidian, `#151411` Basalt, `#1D1B17` Charcoal, `#F5F1EB` Travertine ink, `#9E9689` Stone, `#C8A264` Brushed Brass, `#78A889` Botanical Sage, `#C86849` Terracotta, `#3E8E94` Lagoon) paired with **`Instrument Serif`** (display headings), **`DM Sans`** (body copy), and **`JetBrains Mono`** (technical specs).
 
 ## 1. Core Concept & Narrative Strategy
 

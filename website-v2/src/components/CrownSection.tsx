@@ -117,7 +117,7 @@ export function CrownSection() {
           <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[6px] border hairline bg-basalt">
             {!zoomMode ? (
               <motion.img
-                src="/renders/north-deck-render.png"
+                src={RENDERS.north.src}
                 alt="Golden-hour eye-level render of the North Stepped Terrace"
                 style={{ scale }}
                 className="h-full w-full object-cover"

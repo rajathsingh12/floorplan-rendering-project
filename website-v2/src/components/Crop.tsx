@@ -72,10 +72,12 @@ export function Crop({
   );
 }
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export const RENDERS = {
-  iso: { src: '/renders/isometric-approved.png', aspect: 1376 / 768 },
-  plan: { src: '/renders/masterplan-approved.png', aspect: 768 / 1376 },
-  north: { src: '/renders/north-deck-render.png', aspect: 1376 / 768 },
-  south: { src: '/renders/south-fitness-render.png', aspect: 1376 / 768 },
-  satellite: { src: '/renders/map-view.png', aspect: 848 / 1920 },
+  iso: { src: `${BASE_URL}renders/isometric-approved.png`, aspect: 1376 / 768 },
+  plan: { src: `${BASE_URL}renders/masterplan-approved.png`, aspect: 768 / 1376 },
+  north: { src: `${BASE_URL}renders/north-deck-render.png`, aspect: 1376 / 768 },
+  south: { src: `${BASE_URL}renders/south-fitness-render.png`, aspect: 1376 / 768 },
+  satellite: { src: `${BASE_URL}renders/map-view.png`, aspect: 848 / 1920 },
 } as const;

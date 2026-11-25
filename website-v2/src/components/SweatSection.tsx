@@ -61,7 +61,7 @@ export function SweatSection() {
           <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[6px] border hairline bg-basalt">
             {!cameraLock ? (
               <motion.img
-                src="/renders/south-fitness-render.png"
+                src={RENDERS.south.src}
                 alt="Twilight render of the South 3-Bay Fitness Pavilion and perimeter running track"
                 style={{ scale: imgScale }}
                 className="h-full w-full object-cover"

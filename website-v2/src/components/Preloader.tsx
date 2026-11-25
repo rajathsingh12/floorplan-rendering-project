@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { SILHOUETTE, ZONE_PATHS } from '../data/siteplan';
 import { EASE } from '../lib/motion';
+import { RENDERS } from './Crop';
 
 const MIN_MS = 1200;
 const MAX_MS = 2200;
@@ -25,7 +26,7 @@ export function Preloader({ onDone }: { onDone: () => void }) {
     img.onload = img.onerror = () => {
       loaded = true;
     };
-    img.src = '/renders/north-deck-render.png';
+    img.src = RENDERS.north.src;
     const start = performance.now();
     const tick = (t: number) => {
       const elapsed = t - start;

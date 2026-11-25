@@ -11,6 +11,7 @@ import {
 import { useEffect, useRef, useState } from 'react';
 import { SILHOUETTE } from '../data/siteplan';
 import { EASE } from '../lib/motion';
+import { RENDERS } from './Crop';
 import { Eyebrow } from './Primitives';
 
 const STEPS = [
@@ -135,7 +136,7 @@ export function SiteTransformation() {
           <figure className="relative h-[46vh] shrink-0 md:h-[80vh]">
             <div className="relative aspect-[768/1376] h-full overflow-hidden rounded-[6px] border hairline bg-obsidian shadow-2xl">
               <motion.img
-                src="/renders/map-view.png"
+                src={RENDERS.satellite.src}
                 alt="Raw satellite view of the existing rooftop"
                 style={{ opacity: satOpacity, scale: satScale }}
                 className="absolute inset-0 h-full w-full object-cover grayscale-[0.8] contrast-[1.08]"
@@ -144,7 +145,7 @@ export function SiteTransformation() {
               />
               <motion.div style={{ opacity: gridOpacity }} className="absolute inset-0 blueprint-grid" />
               <motion.img
-                src="/renders/masterplan-approved.png"
+                src={RENDERS.plan.src}
                 alt="Approved 2D masterplan of the Rooftop Sanctuary"
                 style={{ clipPath }}
                 className="absolute inset-0 h-full w-full object-cover"

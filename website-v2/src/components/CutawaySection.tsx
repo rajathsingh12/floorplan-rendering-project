@@ -97,7 +97,7 @@ export function CutawaySection() {
                 <>
                   <motion.img
                     key="iso-full"
-                    src="/renders/isometric-approved.png"
+                    src={RENDERS.iso.src}
                     alt="Isometric 3D cutaway of The Rooftop Sanctuary"
                     initial={{ scale: 1.03, opacity: 0.9 }}
                     animate={{ scale: 1, opacity: 1 }}

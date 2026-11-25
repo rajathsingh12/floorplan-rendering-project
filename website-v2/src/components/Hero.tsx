@@ -3,6 +3,7 @@ import { ArrowDown } from 'lucide-react';
 import { useRef } from 'react';
 import { useMediaQuery } from '../lib/hud';
 import { EASE } from '../lib/motion';
+import { RENDERS } from './Crop';
 import { MaskLine } from './Primitives';
 
 /**
@@ -83,7 +84,7 @@ export function Hero({ ready }: { ready: boolean }) {
           className="absolute inset-x-0 bottom-0 mx-auto overflow-hidden border border-brass/30 bg-basalt shadow-[0_0_90px_rgba(0,0,0,0.85)] will-change-[width,height]"
         >
           <motion.img
-            src="/renders/north-deck-render.png"
+            src={RENDERS.north.src}
             alt="Golden-hour eye-level view of the North Deck: semicircular infinity pool, Bali café pergolas and the Atelier salon"
             style={{ scale: imgScale }}
             className="h-full w-full object-cover object-[50%_58%]"

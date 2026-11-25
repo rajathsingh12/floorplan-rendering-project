@@ -6,6 +6,7 @@ import { WALK_ORDER, ZONE_ANCHORS, ZONE_PATHS, pct } from '../data/siteplan';
 import { hud } from '../lib/hud';
 import { EASE } from '../lib/motion';
 import { scrollToY } from '../lib/scroll';
+import { RENDERS } from './Crop';
 import { Eyebrow, MaskLine } from './Primitives';
 
 const STEP_VH = 50;
@@ -57,7 +58,7 @@ export function PlanWalk() {
           {/* Plan figure */}
           <div className="relative aspect-[768/1376] h-[44vh] shrink-0 overflow-hidden rounded-[6px] border hairline bg-basalt shadow-2xl md:h-[80vh]">
             <img
-              src="/renders/masterplan-approved.png"
+              src={RENDERS.plan.src}
               alt="Approved masterplan with the active zone highlighted"
               className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"

@@ -107,7 +107,7 @@ function IndexMenu({ current }: { current: string }) {
       transition={{ duration: 0.75, ease: EASE }}
     >
       <div className="flex h-16 items-center justify-between px-5 md:h-[72px] md:px-10">
-        <span className="eyebrow text-stone">Index — 10 Chapters</span>
+        <span className="eyebrow text-stone">Index — {CHAPTERS.length} Chapters</span>
         <button
           type="button"
           onClick={() => hud.setMenu(false)}

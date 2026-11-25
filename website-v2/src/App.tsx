@@ -7,6 +7,7 @@ import { CrownSection } from './components/CrownSection';
 import { CutawaySection } from './components/CutawaySection';
 import { Hero } from './components/Hero';
 import { Manifesto } from './components/Manifesto';
+import { MaquetteSection } from './components/MaquetteSection';
 import { Nav } from './components/Nav';
 import { PlanWalk } from './components/PlanWalk';
 import { Preloader } from './components/Preloader';
@@ -43,6 +44,7 @@ export default function App() {
         <SiteTransformation />
         <PlanWalk />
         <CutawaySection />
+        <MaquetteSection />
         <SweatSection />
         <BridgeSection />
         <CrownSection />

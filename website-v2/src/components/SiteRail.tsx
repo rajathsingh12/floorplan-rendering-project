@@ -10,7 +10,7 @@ export function SiteRail() {
   const { chapter, focus, menuOpen } = useHud();
   const ch = CHAPTER_MAP[chapter] ?? CHAPTERS[0];
   const zones = focus[chapter] ?? ch.zones;
-  const hidden = chapter === 'arrival' || chapter === 'close' || menuOpen;
+  const hidden = chapter === 'arrival' || chapter === 'maquette' || chapter === 'close' || menuOpen;
   const label =
     zones.length === 1 ? ZONE[zones[0]]?.name : zones.length >= 9 ? 'All 08 active zones' : ch.kicker;
 

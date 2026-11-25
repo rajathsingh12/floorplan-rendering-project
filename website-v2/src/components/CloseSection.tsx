@@ -31,7 +31,7 @@ export function CloseSection() {
       <div className="mx-auto max-w-[1400px]">
         <div className="grid items-end gap-12 lg:grid-cols-12">
           <div className="lg:col-span-8">
-            <Eyebrow index="09" className="text-brass">
+            <Eyebrow index="10" className="text-brass">
               Investor Close // Next Step
             </Eyebrow>
             <h2 className="display mt-5 text-[clamp(3.2rem,8vw,8.6rem)] text-travertine">

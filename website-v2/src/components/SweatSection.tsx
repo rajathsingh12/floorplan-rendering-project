@@ -38,7 +38,7 @@ export function SweatSection() {
       <div className="mx-auto max-w-[1400px]">
         <div className="grid items-end gap-8 md:grid-cols-12">
           <div className="md:col-span-8">
-            <Eyebrow index="04" className="text-brass">
+            <Eyebrow index="05" className="text-brass">
               Sweat &amp; Strength // South Rectangular Slab
             </Eyebrow>
             <h2 className="display mt-4 text-[clamp(2.9rem,6.8vw,7.4rem)] text-travertine">

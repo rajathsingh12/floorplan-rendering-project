@@ -37,7 +37,7 @@ export function CaseSection() {
         {/* Header */}
         <div className="grid items-end gap-8 md:grid-cols-12">
           <div className="md:col-span-8">
-            <Eyebrow index="08" className="text-brass">
+            <Eyebrow index="09" className="text-brass">
               The Investment Case // Options · BOQ · Roadmap
             </Eyebrow>
             <h2 className="display mt-4 text-[clamp(2.9rem,6.8vw,7.4rem)]">

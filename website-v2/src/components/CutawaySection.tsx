@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowUpRight, Ban, Box, Compass, Layers, Maximize2, Minimize2 } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, Ban, Box, Layers, Maximize2, Minimize2 } from 'lucide-react';
 import { useState } from 'react';
 import { ZONE_CHAPTER } from '../data/chapters';
 import { SPATIAL_ZONES, type SpatialZone } from '../data/zones';
@@ -9,7 +9,7 @@ import { scrollToId } from '../lib/scroll';
 import { Crop, RENDERS } from './Crop';
 import { Eyebrow, MaskLine, Reveal } from './Primitives';
 
-type ViewTab = 'iso' | 'closeup' | 'orbit';
+type ViewTab = 'iso' | 'closeup';
 
 export function CutawaySection() {
   const [selected, setSelected] = useState<SpatialZone>(SPATIAL_ZONES[0]);
@@ -77,15 +77,12 @@ export function CutawaySection() {
               </button>
               <button
                 type="button"
-                role="tab"
-                aria-selected={tab === 'orbit'}
-                onClick={() => setTab('orbit')}
-                className={`inline-flex items-center gap-2 rounded-full px-4 py-2 eyebrow text-[10px] transition-colors ${
-                  tab === 'orbit' ? 'bg-brass text-obsidian' : 'text-stone hover:text-travertine'
-                }`}
+                onClick={() => scrollToId('maquette')}
+                className="inline-flex items-center gap-2 rounded-full border border-brass/35 px-4 py-2 eyebrow text-[10px] text-brass transition-colors hover:bg-brass hover:text-obsidian"
               >
                 <Box className="h-3.5 w-3.5" strokeWidth={1.25} />
-                3D Orbit · Phase 2
+                Interactive 3D Stage
+                <ArrowDownRight className="h-3 w-3" strokeWidth={1.25} />
               </button>
             </div>
           </Reveal>
@@ -171,34 +168,6 @@ export function CutawaySection() {
                       className="rounded-full border border-travertine/30 bg-obsidian/75 px-4 py-2 eyebrow text-[10px] text-travertine backdrop-blur-md hover:bg-brass hover:text-obsidian"
                     >
                       Reset View
-                    </button>
-                  </div>
-                </div>
-              )}
-
-              {tab === 'orbit' && (
-                <div className="flex h-full w-full flex-col justify-between bg-obsidian p-6 text-travertine md:p-10">
-                  <div className="flex items-center justify-between eyebrow text-[10px] text-stone">
-                    <span>PHASE 02 // BLENDER + THREE.JS / GLB SLOT</span>
-                    <span className="rounded-full border border-brass/40 px-3 py-1 text-brass">READY</span>
-                  </div>
-                  <div className="my-auto max-w-lg">
-                    <Compass className="h-8 w-8 text-brass" strokeWidth={1.25} />
-                    <h3 className="display mt-4 text-3xl italic md:text-5xl">
-                      Interactive 3D Greybox Slot
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-stone">
-                      Reserved for Phase 2 Blender <code>.glb</code> model or flythrough loop.
-                    </p>
-                  </div>
-                  <div className="flex items-center justify-between border-t hairline pt-4 eyebrow text-[10px] text-stone">
-                    <span>TRUE SILHOUETTE · 08 ZONES + MEP</span>
-                    <button
-                      type="button"
-                      onClick={() => setTab('iso')}
-                      className="text-brass underline underline-offset-4"
-                    >
-                      Back to Cutaway →
                     </button>
                   </div>
                 </div>
@@ -298,17 +267,21 @@ export function CutawaySection() {
                 key={z.id}
                 type="button"
                 onClick={() => pickZone(z)}
-                className={`flex flex-col justify-between rounded-[4px] border p-3 text-left transition-all ${
+                className={`flex min-h-[78px] flex-col justify-between rounded-[4px] border p-3 text-left transition-all ${
                   active
                     ? 'border-brass bg-brass text-obsidian'
                     : 'border-travertine/12 bg-obsidian/70 text-travertine hover:border-brass/50'
                 }`}
               >
-                <div className="flex items-center justify-between font-mono text-[10px]">
-                  <span className={active ? 'text-obsidian' : 'text-brass'}>{z.pinLabel}</span>
-                  <span className="opacity-65">{z.mapCode}</span>
+                <div className="flex items-center justify-between gap-1 font-mono text-[10px]">
+                  <span className={active ? 'font-semibold text-obsidian' : 'text-brass'}>
+                    {z.pinLabel}
+                  </span>
+                  <span className="truncate opacity-65">{z.mapCode}</span>
                 </div>
-                <p className="mt-2 line-clamp-1 text-xs font-medium">{z.name}</p>
+                <p className="mt-2 text-pretty break-words text-[11.5px] font-medium leading-snug">
+                  {z.name}
+                </p>
               </button>
             );
           })}

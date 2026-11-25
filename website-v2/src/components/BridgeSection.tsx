@@ -77,7 +77,7 @@ export function BridgeSection() {
       <div className="mx-auto max-w-[1400px]">
         <div className="grid items-end gap-8 md:grid-cols-12">
           <div className="md:col-span-8">
-            <Eyebrow index="05" className="text-brass">
+            <Eyebrow index="06" className="text-brass">
               The Bridge // East Spine &amp; Screened Core
             </Eyebrow>
             <h2 className="display mt-4 text-[clamp(2.8rem,6.4vw,7rem)]">

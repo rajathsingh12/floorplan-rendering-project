@@ -3,8 +3,8 @@
 > **Purpose of this Document:** This file serves as the visual design foundation for the interactive, scroll-driven architectural presentation website.
 > **Business Objective:** Secure ₹5–6 Crore in investment by transforming an unmeasured, raw \~20,000 sq. ft. rooftop/top-floor office space into a unified, luxury **Bali-themed Lifestyle Hub** housing a **Gym, Salon, and Café** (with modular exploration of a **Pool & Perimeter Track**).
 >
-> **Canonical v2 Implementation Note (`website-v2/` — Dark Monograph Edition):**
-> The live application in `website-v2/` implements this specification locked to the **true 8-zone building silhouette** (see `AGENTS.md` and `CHECKPOINT_HANDOFF.md`) using a full **Dark Volcanic Obsidian & Brushed Brass Monograph theme** (`#0E0D0B` Obsidian, `#151411` Basalt, `#1D1B17` Charcoal, `#F5F1EB` Travertine ink, `#9E9689` Stone, `#C8A264` Brushed Brass, `#78A889` Botanical Sage, `#C86849` Terracotta, `#3E8E94` Lagoon) paired with **`Instrument Serif`** (display headings), **`DM Sans`** (body copy), and **`JetBrains Mono`** (technical specs).
+> **Canonical v2 Implementation Note (`website-v2/` — Dark Monograph Edition, Live on GitHub Pages):**
+> The live application in `website-v2/` (deployed at `https://rajathsingh12.github.io/floorplan-rendering-project/`) implements this specification across **11 choreographed chapters (`00`–`10`)** locked to the **true 8-zone building silhouette** (see `AGENTS.md` and `CHECKPOINT_HANDOFF.md`). It uses a full **Dark Volcanic Obsidian & Brushed Brass Monograph theme** (`#0E0D0B` Obsidian, `#151411` Basalt, `#1D1B17` Charcoal, `#F5F1EB` Travertine ink, `#9E9689` Stone, `#C8A264` Brushed Brass, `#78A889` Botanical Sage, `#C86849` Terracotta, `#3E8E94` Lagoon) paired with **`Instrument Serif`** (display headings), **`DM Sans`** (body copy), and **`JetBrains Mono`** (technical specs), including a standalone **Interactive 3D Architectural Maquette (`Ch. 04`, `#maquette`)** and an **Itemized CapEx & Equipment Schedule Explorer (`Ch. 09`, `#case`)** synced directly with `docs/estimates.xlsx`.
 
 ## 1. Core Concept & Narrative Strategy
 
